@@ -25,7 +25,29 @@
   multiparty = new MultiParty( {
     "key": "a17adae5-7d88-496d-a509-5df48c658e8a"  /* SkyWay keyを指定 */
   });
+   //テキストを入力し、submitしたとき
+  $("form").on("submit", function(ev) {
  
+    //onsubmitのデフォルト動作（reload）を抑制
+    ev.preventDefault();
+ 
+    //テキストを取得
+    var $input = $(this).find("input[type=text]"); 
+    var data = $input.val();
+    $input.val("");
+ 
+    //テキストを表示
+    $("#message").append(data + "<br>");
+ 
+    //peerにメッセージを送信
+    multiparty.send(data);
+ 
+  });
+ 
+  // peerからテキストメッセージを受信したとき
+  multiparty.on('message', function(mesg) {
+    $("#message").append(mesg.data + "<br>");
+  });
 
  
   // サーバとpeerに接続
