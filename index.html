@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>SkyWay - Video & Text chat example</title>
+  <title>chat</title>
   <link rel="stylesheet" href="style.css">
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
@@ -20,21 +20,21 @@
 
   <!-- Steps -->
   <div class="pure-u-1-3">
-    <h2>SkyWay Video&Text Chat</h2>
+    <h2>Chat Application</h2>
 
     <div class="select">
-      <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+      <label for="audioSource">マイク入力: </label><select id="audioSource"></select>
     </div>
 
     <div class="select">
-      <label for="videoSource">Video source: </label><select id="videoSource"></select>
+      <label for="videoSource">カメラ入力: </label><select id="videoSource"></select>
     </div>
 
     <!-- Get local audio/video stream -->
     <div id="step1">
-      <p>Please click `allow` on the top of the screen so we can access your webcam and microphone for calls.</p>
+      <p>通話用のカメラとマイクの許可をしてください。</p>
       <div id="step1-error">
-        <p>Failed to access the webcam and microphone. Make sure to run this demo on an http server and click allow when asked for permission by the browser.</p>
+        <p>あなたの機器からカメラとマイクの信号を受信できませんでした。もう一度再読み込みしてみることをおすすめします。</p>
         <a href="#" class="pure-button pure-button-error" id="step1-retry">Try again</a>
       </div>
     </div>
@@ -42,22 +42,21 @@
     <p>Your id: <span id="my-id">...</span></p>
     <!-- Make calls to others -->
     <div id="step2">
-      <h3>Make a call</h3>
+      <h3>部屋を作る</h3>
       <form id="make-call" class="pure-form">
-        <input type="text" placeholder="Join room..." id="join-room">
-        <button class="pure-button pure-button-success" type="submit">Join</button>
+        <input type="text" placeholder="部屋の名前" id="join-room">
+        <button class="pure-button pure-button-success" type="submit">入る</button>
       </form>
-      <p><strong>Warning:</strong> You may connect with people you don't know if you both use the same room name.</p>
       <p><strong>注意：</strong>同じルーム名を使用した場合、知らない人と接続する可能性があります。</p>
     </div>
 
     <!-- Call in progress -->
     <div id="step3">
-      <p>Currently in room <span id="room-id">...</span></p>
+      <p>あなたが今いる部屋の名前は <span id="room-id">...</span></p>
       <p><a href="#" class="pure-button pure-button-error" id="end-call">End call</a></p>
 
       <!-- テキスト入力 -->
-      <h4>Text chat</h4>
+      <h4>テキストチャット</h4>
       <form id="sendtextform" class="pure-form">
         <input id="mymessage" type="text" placeholder="Enter message">
         <button class="pure-button pure-button-primary" type="submit">Send</button>
