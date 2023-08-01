@@ -1,7 +1,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>SkyWay - Video & Text chat example</title>
+  <title>SkyWay</title>
   <link rel="stylesheet" href="style.css">
   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript" src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
@@ -20,14 +20,14 @@
 
   <!-- Steps -->
   <div class="pure-u-1-3">
-    <h2>SkyWay Video&Text Chat</h2>
+    <h2>Video&Text Chat</h2>
 
     <div class="select">
-      <label for="audioSource">Audio input source: </label><select id="audioSource"></select>
+      <label for="audioSource">マイク入力: </label><select id="audioSource"></select>
     </div>
 
     <div class="select">
-      <label for="videoSource">Video source: </label><select id="videoSource"></select>
+      <label for="videoSource">カメラ入力: </label><select id="videoSource"></select>
     </div>
 
     <!-- Get local audio/video stream -->
@@ -35,13 +35,10 @@
     <p>あなたの番号: <span id="my-id">...</span></p>
     <!-- Make calls to others -->
     <div id="step1">
-      <h3>部屋を作る</h3>
       <form id="make-call" class="pure-form">
         <input type="text" placeholder="部屋のID..." id="join-room">
         <button class="pure-button pure-button-success" type="submit">入る</button>
       </form>
-      <p><strong></strong></p>
-      <p><strong>注意：</strong>同じルーム名を使用した場合、知らない人と接続する可能性があります。</p>
     </div>
 
     <!-- Call in progress -->
