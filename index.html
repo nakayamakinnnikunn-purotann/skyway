@@ -20,7 +20,6 @@
 
   <!-- Steps -->
   <div class="pure-u-1-3">
-    <h2>Video&Text Chat</h2>
 
     <div class="select">
       <label for="audioSource">マイク入力: </label><select id="audioSource"></select>
@@ -43,14 +42,13 @@
 
     <!-- Call in progress -->
     <div id="step3">
-      <p>Currently in room <span id="room-id">...</span></p>
-      <p><a href="#" class="pure-button pure-button-error" id="end-call">End call</a></p>
+      <p>あなたが今いる部屋の名前 <span id="room-id">...</span></p>
+      <p><a href="#" class="pure-button pure-button-error" id="end-call">会話を終わる</a></p>
 
       <!-- テキスト入力 -->
-      <h4>Text chat</h4>
       <form id="sendtextform" class="pure-form">
-        <input id="mymessage" type="text" placeholder="Enter message">
-        <button class="pure-button pure-button-primary" type="submit">Send</button>
+        <input id="mymessage" type="text" placeholder="メッセージを入力してください">
+        <button class="pure-button pure-button-primary" type="submit">送信</button>
       </form>
 
       <!-- チャット -->
