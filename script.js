@@ -8,7 +8,7 @@ $(function() {
     debug: 3,
   });
 
-  function clickBtn1(){
+  function button(){
 	const remove = document.getElementById("remove");
 
 	if(remove.style.display=="block"){
