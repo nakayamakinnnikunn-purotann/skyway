@@ -31,9 +31,9 @@
     </div>
 
     <!-- Get local audio/video stream -->
-    <div id="step1">
+    <div id="step0">
       <p>通話用のカメラとマイクの許可をしてください。</p>
-      <div id="step1-error">
+      <div id="step0-error">
         <p>あなたの機器からカメラとマイクの信号を受信できませんでした。もう一度再読み込みしてみることをおすすめします。</p>
         <a href="#" class="pure-button pure-button-error" id="step1-retry">Try again</a>
       </div>
@@ -41,7 +41,7 @@
 
     <p>Your id: <span id="my-id">...</span></p>
     <!-- Make calls to others -->
-    <div id="step2">
+    <div id="step1">
       <h3>部屋を作る</h3>
       <form id="make-call" class="pure-form">
         <input type="text" placeholder="部屋の名前" id="join-room">
