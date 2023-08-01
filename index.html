@@ -6,53 +6,35 @@
   <script src="https://skyway.io/dist/multiparty.min.js"></script>
   
   <style> video { width:200px; } </style>
- 
+
 </head>
 <body>
- 
-  <div id="streams">
-    <div>
-    <form>
-      <input type="text"><button type="submit">送信</button>
-    </form>
-    <div id="message"></div>
-  </div>
-  </div>
- 
+
+  <div id="streams"></div>
+
 <script>
- 
+
   // MultiParty インスタンスを生成
   multiparty = new MultiParty( {
-    "key": "a17adae5-7d88-496d-a509-5df48c658e8a"  /* SkyWay keyを指定 */
-  });
-   //テキストを入力し、submitしたとき
-  $("form").on("submit", function(ev) {
- 
-    //onsubmitのデフォルト動作（reload）を抑制
-    ev.preventDefault();
- 
-    //テキストを取得
-    var $input = $(this).find("input[type=text]"); 
-    var data = $input.val();
-    $input.val("");
- 
-    //テキストを表示
-    $("#message").append(data + "<br>");
- 
-    //peerにメッセージを送信
-    multiparty.send(data);
- 
-  });
- 
-  // peerからテキストメッセージを受信したとき
-  multiparty.on('message', function(mesg) {
-    $("#message").append(mesg.data + "<br>");
+    "key": "a17adae5-7d88-496da509-5df48c658e8a"  /* SkyWay keyを指定 */
   });
 
- 
+  multiparty.on('my_ms', function(video) {
+    // 自分のvideoを表示
+    var vNode = MultiParty.util.createVideoNode(video);
+    $(vNode).appendTo("#streams");
+  }).on('peer_ms', function(video) {
+    // peerのvideoを表示
+    var vNode = MultiParty.util.createVideoNode(video);
+    $(vNode).appendTo("#streams");
+  }).on('ms_close', function(peer_id) {
+    // peerが切れたら、対象のvideoノードを削除する
+    $("#"+peer_id).remove();
+  });
+
   // サーバとpeerに接続
   multiparty.start()
- 
+
 </script>
 </body>
 </html>
