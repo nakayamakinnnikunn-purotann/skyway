@@ -8,6 +8,14 @@ $(function() {
     debug: 3,
   });
 
+  function clickBtn1(){
+	const remove = document.getElementById("remove");
+
+	if(remove.style.display=="block"){
+		// noneで非表示
+		remove.style.display ="none";
+	}
+    
   let localStream;
   let room;
   peer.on('open', () => {
