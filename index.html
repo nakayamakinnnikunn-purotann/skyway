@@ -17,6 +17,40 @@
     <div id="their-videos"></div>
     <video id="my-video" muted="true" autoplay playsinline></video>
   </div>
+      <p>Your id: <span id="my-id">...</span></p>
+    <!-- Make calls to others -->
+    <div id="step1">
+      <h3>部屋を作る</h3>
+      <form id="make-call" class="pure-form">
+        <input type="text" placeholder="部屋の名前" id="join-room">
+        <button class="pure-button pure-button-success" type="submit">入る</button>
+      </form>
+      <p><strong>注意：</strong>同じルーム名を使用した場合、知らない人と接続する可能性があります。</p>
+    </div>
+
+    <!-- Call in progress -->
+    <div id="step3">
+      <p>あなたが今いる部屋の名前は <span id="room-id">...</span></p>
+      <p><a href="#" class="pure-button pure-button-error" id="end-call">End call</a></p>
+<!-- テキスト入力 -->
+      <h4>テキストチャット</h4>
+      <form id="sendtextform" class="pure-form">
+        <input id="mymessage" type="text" placeholder="Enter message">
+        <button class="pure-button pure-button-primary" type="submit">Send</button>
+      </form>
+
+      <!-- チャット -->
+      <div id="chatframe"></div>
+
+    </div>
+
+  </div>
+
+  <!-- Chat area -->
+
+
+</div>
+
 
   <!-- Steps -->
   <div class="pure-u-1-3">
@@ -39,41 +73,8 @@
       </div>
     </div>
 
-    <p>Your id: <span id="my-id">...</span></p>
-    <!-- Make calls to others -->
-    <div id="step1">
-      <h3>部屋を作る</h3>
-      <form id="make-call" class="pure-form">
-        <input type="text" placeholder="部屋の名前" id="join-room">
-        <button class="pure-button pure-button-success" type="submit">入る</button>
-      </form>
-      <p><strong>注意：</strong>同じルーム名を使用した場合、知らない人と接続する可能性があります。</p>
-    </div>
-
-    <!-- Call in progress -->
-    <div id="step3">
-      <p>あなたが今いる部屋の名前は <span id="room-id">...</span></p>
-      <p><a href="#" class="pure-button pure-button-error" id="end-call">End call</a></p>
-
-      <!-- テキスト入力 -->
-      <h4>テキストチャット</h4>
-      <form id="sendtextform" class="pure-form">
-        <input id="mymessage" type="text" placeholder="Enter message">
-        <button class="pure-button pure-button-primary" type="submit">Send</button>
-      </form>
-
-      <!-- チャット -->
-      <div id="chatframe"></div>
-
-    </div>
-
-  </div>
-
-  <!-- Chat area -->
 
 
-</div>
-
-
+      
 </body>
 </html>
