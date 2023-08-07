@@ -129,11 +129,11 @@ $(function() {
     });
 
     room.on('peerJoin', peerId => {
-      messages.prepend('<div><span class="peer">' + peerId.substr(0,8) + '</span>: has joined the room </div>');
+      messages.prepend('<div><span class="peer">' + peerId.substr(0,8) + '</span>は入室しました</div>');
     });
 
     room.on('peerLeave', peerId => {
-      messages.prepend('<div><span class="peer">' + peerId.substr(0,8) + '</span>: has left the room </div>');
+      messages.prepend('<div><span class="peer">' + peerId.substr(0,8) + '</span>は退出しました</div>');
     });
 
     // streamが飛んできたら相手の画面を追加する
